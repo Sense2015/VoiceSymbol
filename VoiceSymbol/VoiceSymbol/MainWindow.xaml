@@ -1,0 +1,70 @@
+﻿<Window x:Class="VoiceSymbol.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="540" Width="960">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resource.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <!--上下切4:1-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <!--左右切4:1-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <!--左邊四個-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="m00" Content="我想吃" Grid.Column="0"  Grid.Row="0" Click="m00_Click" />
+                <Button x:Name="m10" Content="我要" Grid.Column="0"  Grid.Row="1" />
+                <Button x:Name="m01" Content="我想喝" Grid.Column="1"  Grid.Row="0" />
+                <Button x:Name="m11" Content="我要" Grid.Column="1"  Grid.Row="1" />
+            </Grid>
+            <!--右邊-->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="c00" Content="前刪" Grid.Row="0" />
+                <Button x:Name="c10" Content="全刪" Grid.Row="1" />
+                <Button x:Name="c20" Content="整句發音" Grid.Row="2" />
+                <Button x:Name="c30" Content="發音" Grid.Row="3" />
+            </Grid>
+
+        </Grid>
+        <!--下面-->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="l00" Content="漢語" Grid.Column="0" Style="{DynamicResource l_zh}"/>
+            <Button x:Name="l01" Content="英語" Grid.Column="1" Style="{DynamicResource l_en}"/>
+            <Button x:Name="l02" Content="台語" Grid.Column="2" Style="{DynamicResource l_tw}"/>
+            <Button x:Name="l03" Content="客語" Grid.Column="3" Style="{DynamicResource l_hoka}"/>
+            <Button x:Name="l04" Content="廣東話" Grid.Column="4" Style="{DynamicResource l_hk}"/>
+        </Grid>
+    </Grid>
+</Window>
