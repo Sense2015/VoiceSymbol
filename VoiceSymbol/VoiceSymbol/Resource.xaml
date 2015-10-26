@@ -6,6 +6,9 @@
     <ImageBrush x:Key="tw" ImageSource="/Images/Language/Kokkien.jpg" Stretch="Uniform"/>
     <ImageBrush x:Key="hoka" ImageSource="/Images/Language/Hokka.png" Stretch="Uniform"/>
     <ImageBrush x:Key="hk" ImageSource="/Images/Language/Cantonese.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="home" ImageSource="/Images/Function/home.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="transparent" ImageSource="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\gif89a.gif" Stretch="Uniform" />
+    <ImageBrush x:Key="bg" ImageSource="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\Sense LOGO02.jpg" Stretch="Uniform" />
 
     <Style x:Key="l_zh" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource zh}"/>
@@ -21,6 +24,26 @@
     </Style>
     <Style x:Key="l_hk" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource hk}"/>
+    </Style>
+    <Style x:Key="tra" TargetType="{x:Type Button}">
+        <!--<Setter Property="Padding" Value="0"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource transparent}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="f_home" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource home}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     
     <Style x:Key="TransparentButtonStyle" TargetType="Button">

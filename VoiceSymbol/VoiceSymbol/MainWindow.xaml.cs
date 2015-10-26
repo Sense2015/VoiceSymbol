@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using EyeXFramework;
+using Tobii.EyeX.Framework;
+
 namespace VoiceSymbol
 {
     /// <summary>
@@ -20,6 +23,8 @@ namespace VoiceSymbol
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        double eyex, eyey;
         public MainWindow()
         {
             InitializeComponent();
@@ -51,6 +56,38 @@ namespace VoiceSymbol
             this.Hide();
             Window4 w4 = new Window4();
             w4.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Eyetracking();
+        }
+        private void Eyetracking()
+        {
+            Console.WriteLine("eyetracking");
+            using (var eyeXHost = new EyeXHost())
+            {
+                eyeXHost.Start();
+
+                using (var lightlyFilteredGazeDataStream = eyeXHost.CreateGazePointDataStream(GazePointDataMode.LightlyFiltered))
+                {
+                    lightlyFilteredGazeDataStream.Next += (s, e) =>
+                    {
+                        Console.WriteLine("Gaze point at ({0:0.0}, {1:0.0}) @{2:0}", e.X, e.Y, e.Timestamp);
+                        eyex = e.X;
+                        eyey = e.Y;
+                    };
+                    Console.In.Read();
+                }
+
+            }
+        }
+
+        private void tohome_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
         }
     }
 }
