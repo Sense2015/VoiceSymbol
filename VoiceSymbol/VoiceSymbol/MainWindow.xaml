@@ -32,9 +32,9 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Button x:Name="m00" Content="我想吃" Grid.Column="0"  Grid.Row="0" Click="m00_Click" />
-                <Button x:Name="m10" Content="我要" Grid.Column="0"  Grid.Row="1" />
-                <Button x:Name="m01" Content="我想喝" Grid.Column="1"  Grid.Row="0" />
-                <Button x:Name="m11" Content="我要" Grid.Column="1"  Grid.Row="1" />
+                <Button x:Name="m10" Content="我要" Grid.Column="0"  Grid.Row="1" Click="m10_Click" />
+                <Button x:Name="m01" Content="我想喝" Grid.Column="1"  Grid.Row="0" Click="m01_Click" />
+                <Button x:Name="m11" Content="我要" Grid.Column="1"  Grid.Row="1" Click="m11_Click" />
             </Grid>
             <!--右邊-->
             <Grid Grid.Row="0" Grid.Column="1">
@@ -60,6 +60,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            
             <Button x:Name="l00" Content="漢語" Grid.Column="0" Style="{DynamicResource l_zh}"/>
             <Button x:Name="l01" Content="英語" Grid.Column="1" Style="{DynamicResource l_en}"/>
             <Button x:Name="l02" Content="台語" Grid.Column="2" Style="{DynamicResource l_tw}"/>

@@ -28,8 +28,29 @@ namespace VoiceSymbol
         private void m00_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Window1 w = new Window1();
-            w.Show();
+            Window1 w1 = new Window1();
+            w1.Show();
+        }
+
+        private void m01_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Window2 w2 = new Window2();
+            w2.Show();
+        }
+
+        private void m10_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Window3 w3 = new Window3();
+            w3.Show();
+        }
+
+        private void m11_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Window4 w4 = new Window4();
+            w4.Show();
         }
     }
 }

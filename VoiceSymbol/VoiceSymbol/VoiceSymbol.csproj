@@ -126,11 +126,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Cantonese.jpg" />
-    <Resource Include="Images\Chinese.jpg" />
-    <Resource Include="Images\English.jpg" />
-    <Resource Include="Images\Hokka.png" />
-    <Resource Include="Images\Kokkien.jpg" />
+    <Resource Include="Images\Language\Cantonese.jpg" />
+    <Resource Include="Images\Language\Chinese.jpg" />
+    <Resource Include="Images\Language\English.jpg" />
+    <Resource Include="Images\Language\Hokka.png" />
+    <Resource Include="Images\Language\Kokkien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sense LOGO02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Main\drink.jpg" />
+    <Resource Include="Images\Main\eat.jpg" />
+    <Resource Include="Images\Main\want.jpg" />
+    <Resource Include="Images\Main\wants.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Function\back.png" />
+    <Resource Include="Images\Function\delete.jpg" />
+    <Resource Include="Images\Function\say.jpg" />
+    <Resource Include="Images\Function\speak.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
