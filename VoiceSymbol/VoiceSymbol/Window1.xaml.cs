@@ -26,9 +26,9 @@ namespace VoiceSymbol
 
         private void x23_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow.this.Show();
+            
         }
 
         private void tohome_Click(object sender, RoutedEventArgs e)

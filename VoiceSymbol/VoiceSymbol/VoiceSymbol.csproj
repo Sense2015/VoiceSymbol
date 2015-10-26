@@ -37,9 +37,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EyeXFramework">
-      <HintPath>x86\EyeXFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -50,7 +47,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Tobii.EyeX.Client.Net20">
+    <Reference Include="Tobii.EyeX.Client.Net20, Version=1.5.466.0, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>x86\Tobii.EyeX.Client.Net20.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
@@ -165,6 +163,12 @@
   <ItemGroup>
     <Resource Include="Images\Function\home.jpg" />
     <Content Include="Tobii.EyeX.Client.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EyeXFramework\EyeXFramework.csproj">
+      <Project>{c9bbfbac-fd0f-46de-843f-f3620bf79dc2}</Project>
+      <Name>EyeXFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -23,8 +23,9 @@ namespace VoiceSymbol
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        string[] content=new string[9];
         double eyex, eyey;
+        int count = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,9 +33,13 @@ namespace VoiceSymbol
 
         private void m00_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Window1 w1 = new Window1();
             w1.Show();
+            content[count] = "我要吃";
+            Console.WriteLine("" + content[count]);
+            count++;
+            Console.WriteLine("" + count);
+            if (count == 9) count = 0;
         }
 
         private void m01_Click(object sender, RoutedEventArgs e)
@@ -42,6 +47,10 @@ namespace VoiceSymbol
             this.Hide();
             Window2 w2 = new Window2();
             w2.Show();
+            content[count] = "我要喝";
+            Console.WriteLine("" + content[count]);
+            count++;
+            if (count == 9) count = 0;
         }
 
         private void m10_Click(object sender, RoutedEventArgs e)
@@ -49,6 +58,10 @@ namespace VoiceSymbol
             this.Hide();
             Window3 w3 = new Window3();
             w3.Show();
+            content[count] = "我想做";
+            Console.WriteLine("" + content[count]);
+            count++;
+            if (count == 9) count = 0;
         }
 
         private void m11_Click(object sender, RoutedEventArgs e)
@@ -56,6 +69,10 @@ namespace VoiceSymbol
             this.Hide();
             Window4 w4 = new Window4();
             w4.Show();
+            content[count] = "我想運動";
+            Console.WriteLine("" + content[count]);
+            count++;
+            if (count == 9) count = 0;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -68,7 +85,6 @@ namespace VoiceSymbol
             using (var eyeXHost = new EyeXHost())
             {
                 eyeXHost.Start();
-
                 using (var lightlyFilteredGazeDataStream = eyeXHost.CreateGazePointDataStream(GazePointDataMode.LightlyFiltered))
                 {
                     lightlyFilteredGazeDataStream.Next += (s, e) =>
@@ -79,7 +95,6 @@ namespace VoiceSymbol
                     };
                     Console.In.Read();
                 }
-
             }
         }
 
@@ -88,6 +103,14 @@ namespace VoiceSymbol
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
+        }
+
+        private void c20_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine(content[i]);
+            }
         }
     }
 }
