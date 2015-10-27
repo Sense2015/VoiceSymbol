@@ -7,9 +7,34 @@
     <ImageBrush x:Key="hoka" ImageSource="/Images/Language/Hokka.png" Stretch="Uniform"/>
     <ImageBrush x:Key="hk" ImageSource="/Images/Language/Cantonese.jpg" Stretch="Uniform"/>
     <ImageBrush x:Key="home" ImageSource="/Images/Function/home.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="back" ImageSource="/Images/Function/back.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="delete" ImageSource="/Images/Function/delete.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="say" ImageSource="/Images/Function/say.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="speak" ImageSource="/Images/Function/speak.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="eat" ImageSource="/Images/Main/eat.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="drink" ImageSource="/Images/Main/drink.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="want" ImageSource="/Images/Main/want.jpg" Stretch="Uniform"/>
+    <ImageBrush x:Key="wants" ImageSource="/Images/Main/wants.jpg" Stretch="Uniform"/>
     <ImageBrush x:Key="transparent" ImageSource="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\gif89a.gif" Stretch="Uniform" />
     <ImageBrush x:Key="bg" ImageSource="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\Sense LOGO02.jpg" Stretch="Uniform" />
 
+    <Image x:Key="img01" Source="/Images/Language/Chinese.jpg" Stretch="Uniform"/>
+    <Image x:Key="img02" Source="/Images/Language/English.jpg" Stretch="Uniform"/>
+    <Image x:Key="img03" Source="/Images/Language/Kokkien.jpg" Stretch="Uniform"/>
+    <Image x:Key="img04" Source="/Images/Language/Hokka.png" Stretch="Uniform"/>
+    <Image x:Key="img05" Source="/Images/Language/Cantonese.jpg" Stretch="Uniform"/>
+    <Image x:Key="img06" Source="/Images/Function/home.jpg" Stretch="Uniform"/>
+    <Image x:Key="img07" Source="/Images/Function/back.jpg" Stretch="Uniform"/>
+    <Image x:Key="img08" Source="/Images/Function/delete.jpg" Stretch="Uniform"/>
+    <Image x:Key="img09" Source="/Images/Function/say.jpg" Stretch="Uniform"/>
+    <Image x:Key="img10" Source="/Images/Function/speak.jpg" Stretch="Uniform"/>
+    <Image x:Key="img11" Source="/Images/Main/eat.jpg" Stretch="Uniform"/>
+    <Image x:Key="img12" Source="/Images/Main/drink.jpg" Stretch="Uniform"/>
+    <Image x:Key="img13" Source="/Images/Main/want.jpg" Stretch="Uniform"/>
+    <Image x:Key="img14" Source="/Images/Main/wants.jpg" Stretch="Uniform"/>
+    <Image x:Key="img15" Source="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\gif89a.gif" Stretch="Uniform" />
+    <Image x:Key="img16" Source="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\Sense LOGO02.jpg" Stretch="Uniform" />
+    
     <Style x:Key="l_zh" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource zh}"/>
     </Style>
@@ -41,6 +66,78 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{DynamicResource home}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="f_back" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource back}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="f_delete" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource delete}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="f_say" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource say}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="f_speak" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource speak}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="m_eat" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource eat}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="m_drink" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource drink}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="m_want" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource want}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="m_wants" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource wants}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

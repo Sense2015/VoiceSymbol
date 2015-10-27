@@ -31,7 +31,8 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="tohome" Grid.Column="0" Grid.Row="0" Style="{DynamicResource f_home}" Click="tohome_Click"/>
+                <Button x:Name="_home" Grid.Column="0" Grid.Row="0" Style="{DynamicResource f_home}" Click="_home_Click"/>
+                <Button x:Name="_say" Grid.Column="0" Grid.Row="2" Style="{DynamicResource f_say}" Click="_say_Click"/>
             </Grid>
             <!--BACK&CLEAN-->
             <Grid Grid.Row="0" Grid.Column="2">
@@ -60,9 +61,9 @@
             </Grid.RowDefinitions>
             
             <Button x:Name="x00" Grid.Column="0" Grid.Row="0" Style="{DynamicResource tra}" Click="x00_Click" />
-            <Button x:Name="x01" Grid.Column="1" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" />
-            <Button x:Name="x02" Grid.Column="2" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" />
-            <Button x:Name="x03" Grid.Column="3" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" />
+            <Button x:Name="x01" Grid.Column="1" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" Click="x01_Click" />
+            <Button x:Name="x02" Grid.Column="2" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" Click="x02_Click" />
+            <Button x:Name="x03" Grid.Column="3" Grid.Row="0" Style="{DynamicResource TransparentButtonStyle}" Click="x03_Click" />
 
             <Button x:Name="x10" Grid.Column="0" Grid.Row="1" Style="{DynamicResource TransparentButtonStyle}"/>
             <Button x:Name="x11" Grid.Column="1" Grid.Row="1" Style="{DynamicResource TransparentButtonStyle}"/>

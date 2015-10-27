@@ -23,56 +23,69 @@ namespace VoiceSymbol
     /// </summary>
     public partial class MainWindow : Window
     {
-        string[] content=new string[9];
+        //string[] content=new string[9];
         double eyex, eyey;
-        int count = 0;
+        Image[] view;
+        //int count = 0;
+        //storage sto = new storage();
+        //string[] content = new string[9];
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        public void viewclose()
+        {
+            storage.count++;
+            if (storage.count == 9) storage.count = 0;
+        }
         private void m00_Click(object sender, RoutedEventArgs e)
         {
             Window1 w1 = new Window1();
             w1.Show();
-            content[count] = "我要吃";
-            Console.WriteLine("" + content[count]);
-            count++;
-            Console.WriteLine("" + count);
-            if (count == 9) count = 0;
+
+            canvas1.Children.Clear();
+            double width = (this.canvas1.ActualWidth - (9 + 1) * 5) / 9; 
+            double height = (this.canvas1.ActualHeight - (1 + 1) * 5) / 1;
+            Image ig = new Image()
+            {
+                Width = width,
+                Height = height,
+            };
+            Canvas.SetTop(ig, 0 * height + 5);
+            Canvas.SetLeft(ig, storage.count * width + 5);
+            canvas1.Children.Add(ig);
+            ig.Source = ((Image)TryFindResource("img16")).Source;
+
+            storage.content[storage.count] = "我要吃";
+            Console.WriteLine("" + storage.content[storage.count]);
+            viewclose();
         }
 
         private void m01_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Window2 w2 = new Window2();
             w2.Show();
-            content[count] = "我要喝";
-            Console.WriteLine("" + content[count]);
-            count++;
-            if (count == 9) count = 0;
+            storage.content[storage.count] = "我要喝";
+            Console.WriteLine("" + storage.content[storage.count]);
+            viewclose();
         }
 
         private void m10_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Window3 w3 = new Window3();
             w3.Show();
-            content[count] = "我想做";
-            Console.WriteLine("" + content[count]);
-            count++;
-            if (count == 9) count = 0;
+            storage.content[storage.count] = "我想做";
+            Console.WriteLine("" + storage.content[storage.count]);
+            viewclose();
         }
 
         private void m11_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Window4 w4 = new Window4();
             w4.Show();
-            content[count] = "我想運動";
-            Console.WriteLine("" + content[count]);
-            count++;
-            if (count == 9) count = 0;
+            storage.content[storage.count] = "我想運動";
+            Console.WriteLine("" + storage.content[storage.count]);
+            viewclose();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -98,19 +111,69 @@ namespace VoiceSymbol
             }
         }
 
-        private void tohome_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            this.Close();
-            mainWindow.Show();
-        }
-
         private void c20_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < 9; i++)
             {
-                Console.WriteLine(content[i]);
+                Console.Write(storage.content[i]);
             }
+            Console.WriteLine("");
+        }
+
+        private void _back_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = null;
+            if(storage.count>0) storage.count-- ;
+        }
+
+        private void _delete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 0; i < 9; i++)
+            {
+                storage.content[i] = null;
+            }
+            storage.count = 0;
+        }
+
+        private void _say_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                Console.Write(storage.content[i]);
+            }
+            Console.WriteLine("");
+        }
+
+        private void c00_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = null;
+            if (storage.count > 0) storage.count--;
+        }
+
+        private void c10_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = null;
+            if (storage.count > 0) storage.count--;
+        }
+
+        private void c30_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(storage.content[storage.count-1]);
+        }
+
+        private void l00_Click(object sender, RoutedEventArgs e)
+        {
+            storage.language = 0;
+            MediaPlayer player = new MediaPlayer();
+            player.Open(new Uri(@"airplane.mp3", UriKind.Relative));
+            player.Play();
+            Console.WriteLine("test");
+        }
+
+        private void l01_Click(object sender, RoutedEventArgs e)
+        {
+            storage.language = 1;
         }
     }
 }

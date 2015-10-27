@@ -28,7 +28,8 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="tohome" Grid.Column="0" Grid.Row="0" Style="{DynamicResource f_home}" Click="tohome_Click"/>
+                <Button x:Name="_home" Grid.Column="0" Grid.Row="0" Style="{DynamicResource f_home}" Click="_home_Click"/>
+                <Button x:Name="_say" Grid.Column="0" Grid.Row="2" Style="{DynamicResource f_say}" Click="_say_Click"/>
             </Grid>
             <!--BACK&CLEAN-->
             <Grid Grid.Row="0" Grid.Column="2">
@@ -52,16 +53,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="x00" Grid.Column="0" Grid.Row="0" />
-            <Button x:Name="x01" Grid.Column="1" Grid.Row="0" />
-            <Button x:Name="x02" Grid.Column="2" Grid.Row="0" />
+            <Button x:Name="x00" Grid.Column="0" Grid.Row="0" Click="x00_Click" />
+            <Button x:Name="x01" Grid.Column="1" Grid.Row="0" Click="x01_Click" />
+            <Button x:Name="x02" Grid.Column="2" Grid.Row="0" Click="x02_Click" />
         
-            <Button x:Name="x10" Grid.Column="0" Grid.Row="1" />
-            <Button x:Name="x11" Grid.Column="1" Grid.Row="1" />
-            <Button x:Name="x12" Grid.Column="2" Grid.Row="1" />
+            <Button x:Name="x10" Grid.Column="0" Grid.Row="1" Click="x10_Click" />
+            <Button x:Name="x11" Grid.Column="1" Grid.Row="1" Click="x11_Click" />
+            <Button x:Name="x12" Grid.Column="2" Grid.Row="1" Click="x12_Click" />
         
-            <Button x:Name="x20" Grid.Column="0" Grid.Row="2"/>
-            <Button x:Name="x21" Grid.Column="1" Grid.Row="2"/>
+            <Button x:Name="x20" Grid.Column="0" Grid.Row="2" Click="x20_Click"/>
+            <Button x:Name="x21" Grid.Column="1" Grid.Row="2" Click="x21_Click"/>
             <Button x:Name="x22" Grid.Column="2" Grid.Row="2" Click="x22_Click"/>
         </Grid>
     </Grid>

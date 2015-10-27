@@ -23,19 +23,49 @@ namespace VoiceSymbol
         {
             InitializeComponent();
         }
-
+        public void viewclose()
+        {
+            storage.count++;
+            if (storage.count == 9) storage.count = 0;
+            this.Close();
+        }
+        private void x00_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = "Eclair";
+            viewclose();
+        }
+        private void x01_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = "Froyo";
+            viewclose();
+        }
+        private void x02_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = "Gingerbread";
+            viewclose();
+        }
+        private void x03_Click(object sender, RoutedEventArgs e)
+        {
+            storage.content[storage.count] = "Honey";
+            viewclose();
+        }
         private void x23_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
         }
 
-        private void tohome_Click(object sender, RoutedEventArgs e)
+        private void _home_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+        }
+
+        private void _say_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                Console.Write(storage.content[i]);
+            }
+            Console.WriteLine("");
         }
     }
 }

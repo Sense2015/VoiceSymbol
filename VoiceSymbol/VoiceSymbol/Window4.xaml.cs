@@ -23,19 +23,69 @@ namespace VoiceSymbol
         {
             InitializeComponent();
         }
-
-        private void x22_Click(object sender, RoutedEventArgs e)
+        public void viewclose()
         {
-            MainWindow mainWindow = new MainWindow();
+            storage.count++;
+            if (storage.count == 9) storage.count = 0;
             this.Close();
-            mainWindow.Show();
+        }
+        
+        private void _home_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
-        private void tohome_Click(object sender, RoutedEventArgs e)
+        private void x00_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            this.Close();
-            mainWindow.Show();
+
+        }
+
+        private void x01_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void x02_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void x10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void x11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void x12_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void x20_Click(object sender, RoutedEventArgs e)
+        {
+            viewclose();
+        }
+
+        private void x21_Click(object sender, RoutedEventArgs e)
+        {
+            viewclose();
+        }
+        private void x22_Click(object sender, RoutedEventArgs e)
+        {
+            viewclose();
+        }
+
+        private void _say_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                Console.Write(storage.content[i]);
+            }
+            Console.WriteLine("");
         }
     }
 }
