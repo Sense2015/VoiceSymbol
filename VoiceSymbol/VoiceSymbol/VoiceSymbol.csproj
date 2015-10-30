@@ -163,7 +163,36 @@
   <ItemGroup>
     <Resource Include="Images\Function\home.jpg" />
     <Resource Include="Images\Function\back.jpg" />
+    <Resource Include="Images\Drink\drink001.jpg" />
+    <Resource Include="Images\Drink\drink002.jpg" />
+    <Resource Include="Images\Drink\drink003.jpg" />
+    <Resource Include="Images\Drink\drink004.jpg" />
+    <Resource Include="Images\Drink\drink005.jpg" />
+    <Resource Include="Images\Drink\drink006.jpg" />
+    <Resource Include="Images\Drink\drink007.jpg" />
+    <Resource Include="Images\Food\food001.jpg" />
+    <Resource Include="Images\Food\food002.jpg" />
+    <Resource Include="Images\Food\food003.jpg" />
+    <Resource Include="Images\Food\food004.jpg" />
+    <Resource Include="Images\Food\food005.jpg" />
+    <Resource Include="Images\Food\food006.jpg" />
+    <Resource Include="Images\Food\food007.jpg" />
+    <Resource Include="Images\Do\wd001.jpg" />
+    <Resource Include="Images\Do\wd002.jpg" />
+    <Resource Include="Images\Do\wd003.jpg" />
+    <Resource Include="Images\Sport\ws001.jpg" />
+    <Resource Include="Images\Sport\ws002.jpg" />
+    <Resource Include="Images\Sport\ws003.jpg" />
     <Content Include="Sounds\airplane.mp3" />
+    <Content Include="Sounds\img11.mp3" />
+    <Content Include="Sounds\img12.mp3" />
+    <Content Include="Sounds\img17.mp3" />
+    <Content Include="Sounds\img18.mp3" />
+    <Content Include="Sounds\img19.mp3" />
+    <Content Include="Sounds\img23.mp3" />
+    <Content Include="Sounds\img24.mp3" />
+    <Content Include="Sounds\img25.mp3" />
+    <Content Include="Sounds\img26.mp3" />
     <Content Include="Tobii.EyeX.Client.dll" />
   </ItemGroup>
   <ItemGroup>

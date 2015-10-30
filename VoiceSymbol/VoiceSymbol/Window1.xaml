@@ -1,7 +1,7 @@
 ﻿<Window x:Class="VoiceSymbol.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window1" Height="540" Width="960" WindowStartupLocation="CenterScreen">
+        Title="Window1" Height="540" Width="960" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -21,6 +21,9 @@
                 <ColumnDefinition Width="18*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Canvas x:Name="canvas1" />
+            </Grid>
             <!--HOME&SPEAK-->
             <Grid Grid.Row="0" Grid.Column="0">
                 <Grid.RowDefinitions>
@@ -38,6 +41,8 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
+                <Button x:Name="_back" Grid.Column="0" Grid.Row="0" Style="{DynamicResource f_back}" Click="_back_Click"/>
+                <Button x:Name="_delete" Grid.Column="0" Grid.Row="2" Style="{DynamicResource f_delete}" Click="_delete_Click"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">

@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using EyeXFramework;
 using Tobii.EyeX.Framework;
 
+using Microsoft.VisualBasic;
+
 namespace VoiceSymbol
 {
     /// <summary>
@@ -25,7 +27,6 @@ namespace VoiceSymbol
     {
         //string[] content=new string[9];
         double eyex, eyey;
-        Image[] view;
         //int count = 0;
         //storage sto = new storage();
         //string[] content = new string[9];
@@ -38,53 +39,48 @@ namespace VoiceSymbol
             storage.count++;
             if (storage.count == 9) storage.count = 0;
         }
+        //我要吃
         private void m00_Click(object sender, RoutedEventArgs e)
         {
             Window1 w1 = new Window1();
-            w1.Show();
-
-            canvas1.Children.Clear();
-            double width = (this.canvas1.ActualWidth - (9 + 1) * 5) / 9; 
-            double height = (this.canvas1.ActualHeight - (1 + 1) * 5) / 1;
-            Image ig = new Image()
-            {
-                Width = width,
-                Height = height,
-            };
-            Canvas.SetTop(ig, 0 * height + 5);
-            Canvas.SetLeft(ig, storage.count * width + 5);
-            canvas1.Children.Add(ig);
-            ig.Source = ((Image)TryFindResource("img16")).Source;
-
-            storage.content[storage.count] = "我要吃";
+            storage.content[storage.count] = "img11";
             Console.WriteLine("" + storage.content[storage.count]);
+            w1.Show();
+            w1.win = this;
+            canvasdraw();
             viewclose();
         }
-
+        //我要喝
         private void m01_Click(object sender, RoutedEventArgs e)
         {
             Window2 w2 = new Window2();
-            w2.Show();
-            storage.content[storage.count] = "我要喝";
+            storage.content[storage.count] = "img12";
             Console.WriteLine("" + storage.content[storage.count]);
+            w2.Show();
+            w2.win = this;
+            canvasdraw();
             viewclose();
         }
-
+        //我要做
         private void m10_Click(object sender, RoutedEventArgs e)
         {
             Window3 w3 = new Window3();
-            w3.Show();
-            storage.content[storage.count] = "我想做";
+            storage.content[storage.count] = "img13";
             Console.WriteLine("" + storage.content[storage.count]);
+            w3.Show();
+            w3.win = this;
+            canvasdraw();
             viewclose();
         }
-
+        //我要運動
         private void m11_Click(object sender, RoutedEventArgs e)
         {
             Window4 w4 = new Window4();
-            w4.Show();
-            storage.content[storage.count] = "我想運動";
+            storage.content[storage.count] = "img14";
             Console.WriteLine("" + storage.content[storage.count]);
+            w4.Show();
+            w4.win = this;
+            canvasdraw();
             viewclose();
         }
 
@@ -110,63 +106,113 @@ namespace VoiceSymbol
                 }
             }
         }
-
+        //念整句
         private void c20_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < 9; i++)
             {
-                Console.Write(storage.content[i]);
+                Console.Write(storage.content[i]+",");
             }
             Console.WriteLine("");
         }
-
+        //倒退
         private void _back_Click(object sender, RoutedEventArgs e)
         {
-            storage.content[storage.count] = null;
-            if(storage.count>0) storage.count-- ;
+            if (storage.count > 0)
+            {
+                storage.content[storage.count - 1] = null;
+                storage.count--;
+            }
+            canvasdraw();
         }
-
+        //清除
         private void _delete_Click(object sender, RoutedEventArgs e)
         {
-            
             for (int i = 0; i < 9; i++)
             {
                 storage.content[i] = null;
             }
             storage.count = 0;
+            canvasdraw();
+        }
+        //念整句
+        string path;
+        int index = 1;
+        private void _say_Click(object sender, RoutedEventArgs e)
+        {
+            //int i = 0;
+            //while (storage.content[i] != null && i < 9)
+            //{
+            MediaPlayer player = new MediaPlayer();
+            path=@"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\" + storage.content[0] + ".mp3";
+            play(path);
+                //player.Open(new Uri(@"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\" + storage.content[i] + ".mp3", UriKind.Relative));
+                //player.Play();
+
+                //player.MediaEnded += new EventHandler(player_MediaEnded);
+                //i++;
+                //if (i == 9) break;
+            //}
+
+        }
+        void play(string p)
+        {
+            //MediaPlayer player = new MediaPlayer();
+            MediaPlayer player = new MediaPlayer();
+            player.Open(new Uri(p, UriKind.Relative));
+            player.Play();
+
+            player.MediaEnded += new EventHandler(player_MediaEnded);
         }
 
-        private void _say_Click(object sender, RoutedEventArgs e)
+        void player_MediaEnded(object sender, EventArgs e)
+        {
+            //if (index >= storage.count - 1)
+            if (index >= 9 && storage.content[index-1] != null)
+            {
+                index = 1;
+                return;
+            }
+            
+            path = @"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\" + storage.content[index] + ".mp3";
+            index++;
+            //player.MediaEnded -= new EventHandler(player_MediaEnded);
+            play(path);
+        }
+        //倒退
+        private void c00_Click(object sender, RoutedEventArgs e)
+        {
+            if (storage.count > 0)
+            {
+                storage.content[storage.count - 1] = null;
+                storage.count--;
+            }
+            canvasdraw();
+        }
+        //清除
+        private void c10_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < 9; i++)
             {
-                Console.Write(storage.content[i]);
+                storage.content[i] = null;
             }
-            Console.WriteLine("");
+            storage.count = 0; 
+            canvasdraw();
         }
-
-        private void c00_Click(object sender, RoutedEventArgs e)
-        {
-            storage.content[storage.count] = null;
-            if (storage.count > 0) storage.count--;
-        }
-
-        private void c10_Click(object sender, RoutedEventArgs e)
-        {
-            storage.content[storage.count] = null;
-            if (storage.count > 0) storage.count--;
-        }
-
+        //發單音
         private void c30_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine(storage.content[storage.count-1]);
+            MediaPlayer player = new MediaPlayer();
+            player.Open(new Uri(@"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\" + storage.content[storage.count - 1] + ".mp3", UriKind.Relative));
+            player.Play();
         }
 
         private void l00_Click(object sender, RoutedEventArgs e)
         {
             storage.language = 0;
             MediaPlayer player = new MediaPlayer();
-            player.Open(new Uri(@"airplane.mp3", UriKind.Relative));
+            player.Open(new Uri(@"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\airplane.mp3", UriKind.Relative));
             player.Play();
             Console.WriteLine("test");
         }
@@ -174,6 +220,32 @@ namespace VoiceSymbol
         private void l01_Click(object sender, RoutedEventArgs e)
         {
             storage.language = 1;
+            MediaPlayer player = new MediaPlayer();
+            player.Open(new Uri(@"C:\Sense2015\VoiceSymbol\VoiceSymbol\Sounds\img01.mp3", UriKind.Relative));
+            player.Play();
+            Console.WriteLine("test");
+        }
+        public void canvasdraw()
+        {
+            canvas1.Children.Clear();
+            int i = 0;
+            while (storage.content[i] != null && i < 9)
+            {
+                double width = (this.canvas1.ActualWidth - (9 + 1) * 5) / 9;
+                double height = (this.canvas1.ActualHeight - (1 + 1) * 5) / 1;
+                Image ig = new Image()
+                {
+                    Width = width,
+                    Height = height,
+                };
+                canvas1.Children.Add(ig);
+                Canvas.SetTop(ig, 0 * height + 5);
+                Canvas.SetLeft(ig, i * width + 5);
+
+                ig.Source = ((Image)TryFindResource(storage.content[i])).Source;
+                i++;
+                if (i == 9) break;
+            }
         }
     }
 }

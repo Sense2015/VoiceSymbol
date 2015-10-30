@@ -34,22 +34,76 @@
     <Image x:Key="img14" Source="/Images/Main/wants.jpg" Stretch="Uniform"/>
     <Image x:Key="img15" Source="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\gif89a.gif" Stretch="Uniform" />
     <Image x:Key="img16" Source="C:\Sense2015\VoiceSymbol\VoiceSymbol\Images\Sense LOGO02.jpg" Stretch="Uniform" />
+
+    <Image x:Key="img17" Source="/Images/Food/food001.jpg" Stretch="Uniform"/>
+    <Image x:Key="img18" Source="/Images/Food/food002.jpg" Stretch="Uniform"/>
+    <Image x:Key="img19" Source="/Images/Food/food003.jpg" Stretch="Uniform"/>
+    <Image x:Key="img20" Source="/Images/Food/food004.jpg" Stretch="Uniform"/>
+    <Image x:Key="img21" Source="/Images/Food/food005.jpg" Stretch="Uniform"/>
+    <Image x:Key="img22" Source="/Images/Food/food006.jpg" Stretch="Uniform"/>
+    <Image x:Key="img23" Source="/Images/Food/food007.jpg" Stretch="Uniform"/>
+    <Image x:Key="img24" Source="/Images/Drink/drink001.jpg" Stretch="Uniform"/>
+    <Image x:Key="img25" Source="/Images/Drink/drink002.jpg" Stretch="Uniform"/>
+    <Image x:Key="img26" Source="/Images/Drink/drink003.jpg" Stretch="Uniform"/>
+    <Image x:Key="img27" Source="/Images/Drink/drink004.jpg" Stretch="Uniform"/>
+    <Image x:Key="img28" Source="/Images/Drink/drink005.jpg" Stretch="Uniform"/>
+    <Image x:Key="img29" Source="/Images/Drink/drink006.jpg" Stretch="Uniform"/>
+    <Image x:Key="img30" Source="/Images/Drink/drink007.jpg" Stretch="Uniform"/>
+
+    <Image x:Key="img31" Source="/Images/Do/wd001.jpg" Stretch="Uniform"/>
+    <Image x:Key="img32" Source="/Images/Do/wd002.jpg" Stretch="Uniform"/>
+    <Image x:Key="img33" Source="/Images/Do/wd003.jpg" Stretch="Uniform"/>
+    <Image x:Key="img34" Source="/Images/Sport/ws001.jpg" Stretch="Uniform"/>
+    <Image x:Key="img35" Source="/Images/Sport/ws002.jpg" Stretch="Uniform"/>
+    <Image x:Key="img36" Source="/Images/Sport/ws003.jpg" Stretch="Uniform"/>
+    
     
     <Style x:Key="l_zh" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource zh}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource zh}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="l_en" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource en}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource en}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="l_tw" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource tw}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource tw}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="l_hoka" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource hoka}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource hoka}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="l_hk" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource hk}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{DynamicResource hk}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
+
     <Style x:Key="tra" TargetType="{x:Type Button}">
         <!--<Setter Property="Padding" Value="0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>-->
