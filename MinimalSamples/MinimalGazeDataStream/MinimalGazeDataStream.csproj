@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58F6D103-1290-4555-B7BA-BE18FE782D72}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MinimalGazeDataStream</RootNamespace>
+    <AssemblyName>MinimalGazeDataStream</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tobii.EyeX.Client.Net20, Version=0.8.11.65534, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\x86\Tobii.EyeX.Client.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="MainWindow.xaml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="storage.cs" />
+    <Compile Include="Window1.xaml.cs" />
+    <Compile Include="Window2.xaml.cs" />
+    <Compile Include="Window3.xaml.cs" />
+    <Compile Include="Window4.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\lib\x86\Tobii.EyeX.Client.dll">
+      <Link>Tobii.EyeX.Client.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\1138284805819194758.png" />
+    <Content Include="Images\Do\wd001.jpg" />
+    <Content Include="Images\Do\wd002.jpg" />
+    <Content Include="Images\Do\wd003.jpg" />
+    <Content Include="Images\Drink\drink001.jpg" />
+    <Content Include="Images\Drink\drink002.jpg" />
+    <Content Include="Images\Drink\drink003.jpg" />
+    <Content Include="Images\Drink\drink004.jpg" />
+    <Content Include="Images\Drink\drink005.jpg" />
+    <Content Include="Images\Drink\drink006.jpg" />
+    <Content Include="Images\Drink\drink007.jpg" />
+    <Content Include="Images\Food\food001.jpg" />
+    <Content Include="Images\Food\food002.jpg" />
+    <Content Include="Images\Food\food003.jpg" />
+    <Content Include="Images\Food\food004.jpg" />
+    <Content Include="Images\Food\food005.jpg" />
+    <Content Include="Images\Food\food006.jpg" />
+    <Content Include="Images\Food\food007.jpg" />
+    <Content Include="Images\Function\back.jpg" />
+    <Content Include="Images\Function\delete.jpg" />
+    <Content Include="Images\Function\home.jpg" />
+    <Content Include="Images\Function\say.jpg" />
+    <Content Include="Images\Function\speak.jpg" />
+    <Content Include="Images\gif89a.gif" />
+    <Content Include="Images\Language\Cantonese.jpg" />
+    <Content Include="Images\Language\Chinese.jpg" />
+    <Content Include="Images\Language\English.jpg" />
+    <Content Include="Images\Language\Hokka.png" />
+    <Content Include="Images\Language\Kokkien.jpg" />
+    <Content Include="Images\Main\drink.jpg" />
+    <Content Include="Images\Main\eat.jpg" />
+    <Content Include="Images\Main\want.jpg" />
+    <Content Include="Images\Main\wants.jpg" />
+    <Content Include="Images\Sense LOGO02.jpg" />
+    <Content Include="Images\Sport\ws001.jpg" />
+    <Content Include="Images\Sport\ws002.jpg" />
+    <Content Include="Images\Sport\ws003.jpg" />
+    <Content Include="Sounds\airplane.mp3" />
+    <Content Include="Sounds\img11.mp3" />
+    <Content Include="Sounds\img12.mp3" />
+    <Content Include="Sounds\img17.mp3" />
+    <Content Include="Sounds\img18.mp3" />
+    <Content Include="Sounds\img19.mp3" />
+    <Content Include="Sounds\img23.mp3" />
+    <Content Include="Sounds\img24.mp3" />
+    <Content Include="Sounds\img25.mp3" />
+    <Content Include="Sounds\img26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EyeXFramework\EyeXFramework.csproj">
+      <Project>{c9bbfbac-fd0f-46de-843f-f3620bf79dc2}</Project>
+      <Name>EyeXFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
