@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 using EyeXFramework;
 using Tobii.EyeX.Framework;
@@ -20,13 +21,32 @@ using Microsoft.VisualBasic;
 
 namespace VoiceSymbol
 {
+
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
     public partial class MainWindow : Window
     {
-        //string[] content=new string[9];
+        string line;
+        string[] words;
+        int x, y, countimg;
+        string[] imagePaths;
+        string imageFolder;
+        ImageBrush berriesBrush;
+        Button bt;
+        Image[] abcBtn;
+        Image ig;
+        BitmapImage bi3;
+        int temp;
+        Image imgh;
+        Point startPoint;
+        List<Point> pointList = new List<Point>();
+        Thread dot, dot2;
         double eyex, eyey;
+        Ellipse ellipse;
+        System.Windows.Threading.DispatcherTimer m_timer;
+        EyeXHost eyeXHost;
+        //string[] content=new string[9];
         //int count = 0;
         //storage sto = new storage();
         //string[] content = new string[9];
@@ -87,6 +107,38 @@ namespace VoiceSymbol
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Eyetracking();
+            //canvas1.Children.Clear();
+            //dot = new Thread(Eyetracking);
+
+            //ellipse = new Ellipse();
+            //SolidColorBrush mySolidColorBrush = new SolidColorBrush();
+            //mySolidColorBrush.Color = Color.FromArgb(255, 255, 255, 0);
+            //ellipse.Fill = mySolidColorBrush;
+            //ellipse.StrokeThickness = 2;
+            //ellipse.Stroke = Brushes.Black;
+            //ellipse.Width = 10;
+            //ellipse.Height = 10;
+            //canvas1.Children.Add(ellipse);
+
+            //dot2 = new Thread(DrawDot);
+            //dot2.SetApartmentState(ApartmentState.STA);
+            //dot.Start();
+            //dot2.Start();
+
+            //m_timer = new System.Windows.Threading.DispatcherTimer();
+            //m_timer.Tick += new EventHandler(testFunction);
+            //m_timer.IsEnabled = true;
+        }
+        private void DrawDot()
+        { }
+        private void testFunction(object sender, EventArgs e)
+        {
+            //if (eyex <0) return;
+            //Canvas.SetLeft(ellipse,eyex*canvas1.Width/1920);
+            //Canvas.SetTop(ellipse, eyey * canvas1.Height / 1080);
+            Canvas.SetLeft(ellipse, eyex - 800);
+            Canvas.SetTop(ellipse, eyey - 380);
+            //Console.WriteLine("x:" + eyex.ToString() + "- y:" + eyey.ToString());
         }
         private void Eyetracking()
         {
